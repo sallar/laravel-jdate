@@ -18,7 +18,7 @@ Or just copy the downloaded package to ``app/bundles``
 Then in ``application/bundles.php`` add:
 
 ```php
-'date' => array('auto' => true),
+'jdate' => array('auto' => true),
 ```
 
 ## Examples ##
