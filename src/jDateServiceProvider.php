@@ -1,6 +1,6 @@
 <?php
 
-namespace rajabi\jdate;
+namespace Sallar\jDate;
 
 use Illuminate\Support\ServiceProvider;
 
