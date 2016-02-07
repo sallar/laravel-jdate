@@ -1,0 +1,42 @@
+{
+    "name": "sallar/laravel-jdate",
+    "type": "library",
+    "description": "This package helps developers to easily work with Jalali (Shamsi or Iranian) dates in Laravel applications",
+    "keywords": [
+        "sallar",
+        "laravel-jdate"
+    ],
+    "homepage": "https://github.com/sallar/laravel-jdate",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sallar",
+            "email": "findme@sallar.me",
+            "homepage": "https://sallar.me",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : "~5.5|~7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "sallar\\laravel-jdate\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "sallar\\laravel-jdate\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "dev"
+}

@@ -9,16 +9,15 @@ This bundle helps developers to easily work with Jalali (Shamsi or Iranian) date
 
 ## Install ##
 
-To install using artisan run the following CLI command:  
+In order to install Laravel 5 jDate, just add 
 ```
-php artisan bundle:install jdate
+"sallar/laravel-jdate" : "*"
 ```  
-Or just copy the downloaded package to ``app/bundles``  
-
-Then in ``application/bundles.php`` add:
+to your composer.json. Then run composer install or composer update.
+Then in your config/app.php add
 
 ```php
-'jdate' => array('auto' => true),
+'jDate' =>  sallar\laravel-jdate\jDate
 ```
 
 ## Examples ##
