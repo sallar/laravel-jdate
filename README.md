@@ -1,4 +1,4 @@
-# jDate Bundle for Laravel #
+# jDate Package for Laravel #
 
 This bundle helps developers to easily work with Jalali (Shamsi or Iranian) dates in Laravel applications, based on [Jalali (Shamsi) DateTime](https://github.com/sallar/jDateTime) class.
 
