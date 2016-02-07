@@ -1,5 +1,7 @@
 <?php
 namespace Sallar\jDate;
+use \DateTime;
+use \DateTimeZone;
 /**
  * Jalali DateTime Class, supports years higher than 2038
  * by: Sallar Kaboli
@@ -438,8 +440,8 @@ class jDateTime
 
     private static function getMonthNames($month, $shorten = false, $len = 3)
     {
-        $ret = '';
-        switch ( $month ) {
+        $ret = self::getMonth($month,'falaki');
+        /*switch ( $month ) {
             case '1': $ret = 'فروردین'; break;
             case '2': $ret = 'اردیبهشت'; break;
             case '3': $ret = 'خرداد'; break;
@@ -452,7 +454,9 @@ class jDateTime
             case '10': $ret = 'دی'; break;
             case '11': $ret = 'بهمن'; break;
             case '12': $ret = 'اسفند'; break;
-        }
+        }*/
+
+
         return ($shorten) ? mb_substr($ret, 0, $len, 'UTF-8') : $ret;
     }
 
@@ -570,6 +574,56 @@ class jDateTime
 
         return array($gy, $gm, $gd);
 
+    }
+
+    /**
+     * @author Morteza Rjabi
+     *
+     * get the specifid moonth
+     * @param int $num  month number 1-12
+     * @param string $type  jalali or falaki
+     * @return string month name
+     */
+    private static function getMonth($num ,$type= 'jalali')
+    {
+
+        $jalali = [ '1'=> 'فروردین', 
+                    '2'=> 'اردیبهشت', 
+                    '3'=> 'خرداد', 
+                    '4'=> 'تیر', 
+                    '5'=> 'امرداد', 
+                    '6'=> 'شهریور', 
+                    '7'=> 'مهر', 
+                    '8'=> 'آبان', 
+                    '9'=> 'آذر', 
+                    '10'=> 'دی', 
+                    '11'=> 'بهمن', 
+                    '12'=> 'اسفند'];
+
+        $falaki = [ '1'=> 'حمل', 
+                    '2'=> 'ثور', 
+                    '3'=> 'جوزا', 
+                    '4'=> 'سرطان', 
+                    '5'=> 'اسد', 
+                    '6'=> 'سنبله', 
+                    '7'=> 'میزان', 
+                    '8'=> 'عقرب', 
+                    '9'=> 'قوس', 
+                    '10'=> 'جدی', 
+                    '11'=> 'دلو', 
+                    '12'=> 'حوت'];            
+
+        if($num < 1 or $num > 12)
+            return '';
+
+
+       if(config('jdate.type', $type) == 'jalali')  //use $type if config does not exists.
+            return $jalali[$num];
+
+        if(config('jdate.type', $type) == 'falaki')  //use $type if config does not exists.
+            return $falaki[$num];                      
+
+        return '';//if $type not mach jalali or falaki
     }
 
 }

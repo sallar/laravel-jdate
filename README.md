@@ -15,9 +15,21 @@ In order to install Laravel 5 jDate, just add
 ```  
 to your composer.json. Then run composer install or composer update.
 
+Then run 
+```
+php artisan vendor:publish
+```  
+
 Then in your config/app.php add
 ```php
 'jDate' =>  Sallar\jDate\jDate::class
+```
+
+## Config ##
+
+in the config/jdate.php you can set jalali or falaki for month names.
+```php
+'type' =>  'jalali' //default is jalali
 ```
 
 ## Examples ##
