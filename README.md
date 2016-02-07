@@ -17,7 +17,7 @@ to your composer.json. Then run composer install or composer update.
 
 Then in your config/app.php add
 ```php
-'jDate' =>  sallar\laravel-jdate\jDate
+'jDate' =>  sallar\laravel-jdate\jDate::class
 ```
 
 ## Examples ##
