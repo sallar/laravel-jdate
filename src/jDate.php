@@ -1,4 +1,6 @@
 <?php
+namespace Sallar\jDate;
+use Sallar\jDate\jDateTime;
 
 /**
  * A LaravelPHP helper class for working w/ jalali dates.

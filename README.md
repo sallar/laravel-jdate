@@ -1,4 +1,4 @@
-# jDate Bundle for Laravel #
+# jDate Package for Laravel 5.*#
 
 This bundle helps developers to easily work with Jalali (Shamsi or Iranian) dates in Laravel applications, based on [Jalali (Shamsi) DateTime](https://github.com/sallar/jDateTime) class.
 
@@ -9,16 +9,27 @@ This bundle helps developers to easily work with Jalali (Shamsi or Iranian) date
 
 ## Install ##
 
-To install using artisan run the following CLI command:  
+In order to install Laravel 5 jDate, just add 
 ```
-php artisan bundle:install jdate
+"sallar/laravel-jdate" : "*"
 ```  
-Or just copy the downloaded package to ``app/bundles``  
+to your composer.json. Then run composer install or composer update.
 
-Then in ``application/bundles.php`` add:
+Then run 
+```
+php artisan vendor:publish
+```  
 
+Then in your config/app.php add
 ```php
-'jdate' => array('auto' => true),
+'jDate' =>  Sallar\jDate\jDate::class
+```
+
+## Config ##
+
+in the config/jdate.php you can set jalali or falaki for month names.
+```php
+'type' =>  'jalali' //default is jalali
 ```
 
 ## Examples ##
